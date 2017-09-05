@@ -1,8 +1,10 @@
 # School project (WEB110B)
 
-NOTE: THIS IS A SCHOOL PROJECT. THE PURPOSE OF THIS PROJECT IS TO CREATE A FICTIONAL COMAPNY WEBSITE. ANY FOLLOWING INFORMATION WILL BE WRITTEN IN NORWEGIAN.
+NOTE: THIS IS A SCHOOL PROJECT. THE PURPOSE OF THIS PROJECT IS TO CREATE A FICTIONAL COMPANY WEBSITE. ANY FOLLOWING INFORMATION WILL BE WRITTEN IN NORWEGIAN.
 <br />
 <br />
+<br />
+SOURCE: CANVAS
 <br />
 ## Gruppeoppgave: “Ditt selskaps nettsted”
 Hvert selskap trenger et nettsted for å introdusere om seg selv og produkter til kunder. Tenk på et ekte selskap i Norge eller internasjonalt. Ditt prosjekt er å utvikle et introduksjonsnettsted for selskapet.

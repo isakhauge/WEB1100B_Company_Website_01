@@ -1,0 +1,53 @@
+/* VARIABLER: START */
+
+:root{
+    /* Bakgrunnsfarge: */
+    --bg-color: red;
+
+}
+
+/* VARIABLER: SLUTT */
+
+
+
+
+
+
+
+
+/* 
+HTML BODY OG BASIC FIKSER: START
+*/
+
+/* Denne koden fikser problem med margin og padding. */
+html, body, html *, body *{
+    box-sizing: content-box;
+}
+
+/* Denne koden fjerner uønskede mellomrom i body. */
+body{
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+}
+
+/* 
+HTML BODY OG BASIC FIKSER: SLUTT
+*/
+
+
+
+
+
+
+
+
+/* 
+FONTER OG TYPOGRAFI: START
+*/
+
+
+
+/* 
+FONTER OG TYPOGRAFI: SLUTT
+*/

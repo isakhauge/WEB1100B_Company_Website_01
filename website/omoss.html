@@ -9,7 +9,7 @@ HEAD: START
 
 I head setter vi forskjellige
 instillinger for hele HTML-dokumenter,
-Som f.eks. CSS, tillel, og charset.
+Som f.eks. CSS, tittel, og charset.
 
 -->
 
@@ -18,13 +18,18 @@ Som f.eks. CSS, tillel, og charset.
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!-- CSS-REFERANSE: -->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- CSS REFERENCES: -->
+    <link rel="stylesheet" type="text/css" href="rsc/css/main_theme.css">
+    <link rel="stylesheet" type="text/css" href="rsc/css/omOss.css">
 
-    <!-- GOOGLE FONT REFERANSE -->
+    <!-- GOOGLE FONT REFERANSE: -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
 
-    <title>Website title</title>
+    <!-- GOOGLE MATERIAL ICONS REFERENCE: -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+
+    <title>Om oss - Ikea</title>
 </head>
 
 <!-- 
@@ -47,37 +52,78 @@ BODY: START
 
 Body er selve hovedplassen for HTML.
 Innenfor body-taggene lager vi innholdet
-for nettside vår.
+for nettsiden vår.
 
 -->
 
 <body>
 
 
+<a href="#top" id="floatingTop" class="floatingBtn"></a>
 
-
-
-
+<div id="top"></div>
 
 
 <header><!-- Header: Start -->
 <!-- 
 INFO: I header-tag (ikke head) så skal
 man f.eks. ha menybar/statusbar.
- -->
-
+    -->
     <nav>
-        <div id="navBarElementLeft">LEFT</div>
-        <div id="navBarElementRight">RIGHT</div>
+        <div class="content">
+            <div id="navBarElementLeft">
+                <a id="logo" href="index.html"></a>
+            </div>
+
+            <div id="navBarElementRight">
+                <div id="navMenuContainer">
+                    
+                    <label id="closeMenuBtn" for="closeMenu"><!-- This is the radio button that closes the menu. -->
+                    <input type="radio" id="closeMenu" name="toggle" checked>
+                    <span><i class="material-icons">close</i></span>
+                    </label>
+                    
+                    <label id="openMenuBtn" for="openMenu"><!-- This is the radio button that opens the menu. -->
+                    <input type="radio" id="openMenu" name="toggle">
+                    <span><i class="material-icons">menu</i>&nbsp;&nbsp;Meny</span>
+                    
+                    <div id="openMenuBackground">
+                        <div id="navMenu" class="mainContentCol">
+
+                            <div class="col50 white">
+                                <h3>Hovedmeny</h3>
+                                <ul class="menuNav">
+                                    <li><a href="index.html">Hjem</a></li>
+                                    <li><a href="produkt.html">Produkt</a></li>
+                                    <li><a href="omoss.html">Om oss</a></li>
+                                    <li><a href="kontakt.html">Kontakt oss</a></li>
+                                </ul>
+                            </div>
+                            <div class="col50 white">
+                                <h3>Kundeservice</h3>
+                                <ul class="menuNav">
+                                    <li><a href="http://www.ikea.com/ms/no_NO/customer-service/about-our-products/planning-tools/index.html">Planleggingsverktøy</a></li>
+                                    <li><a href="http://www.ikea.com/ms/no_NO/service-offer/index.html">Service og tjenester</a></li>
+                                    <li><a href="http://www.ikea.com/ms/no_NO/customer_service/shop_offline/secure/betal_din_ordre.html">Betal din ordre</a></li>
+                                    <li><a href="http://www.ikea.com/ms/no_NO/customer_service/kjoekken/kjoekken_kontaktskjema.html">Kjøkkenbestilling</a></li>
+                                    <li><a href="http://www.ikea.com/ms/no_NO/customer_service/contact_us/index.html">Kontakt oss</a></li>
+                                    <li><a href="http://www.ikea.com/ms/no_NO/service-offer/gavekort/index.html">Gavekort</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </label>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+        </div>
     </nav>
 
 
 </header><!-- Header: Slutt -->
-
-
-
-
-
 
 
 
@@ -88,13 +134,244 @@ innholde i nettsiden være.
  -->
 
 <!-- Landingsside -->
-    <section id="bannerMain">
+    <section class="banner vidBg sectFullScreen" >
 
-        <div>
-            <h1>Velkommen</h1>
-            <h2>Silicon Valley Boys</h2>
+        <video src="rsc/vid/omoss3.mp4" autoplay loop muted="true"></video>
+        <div class="darken"></div>
+        <div class="mainContent center">
+            <img src="rsc/img/ikea_logo.svg" style="max-width: 300px; margin: 0 auto;">
+            <div class="vSpace40"></div> 
+            <h2 class="white">For de mange menneskene</h2>
+
         </div>
 
+        <a href="#section01" id="scrollBounce" class="scrollBounce"></a>
+        
+        
+
+    </section>
+    <div id="section01"></div>
+    <section class="sectBlue center">
+        <div class="mainContent">
+            <h2 class="white">Velkommen til IKEA</h2>
+            <h3 class="white thin">
+            Vi er et verdibasert konsern med glødende interesse<br />
+            for livet hjemme. Hvert eneste produkt vi lager<br />
+            gjenspeiler vår idé om å gjøre hjemmet<br />
+            til et bedre sted.
+            </h3>
+        </div>
+    </section>
+
+
+    <section>
+            
+        <div class="mainContentCol vCenter">
+            
+            <div class="col50">
+                <h2>Historien bak</h2>
+                <p class="justify">IKEA-navnet er satt sammen av initialene til en av IKEAs grunnleggere, Ingvar Kamprad, (IK) og de første bokstavene i navnet på gården og stedet der han vokste opp – Elmtaryd og Agunnaryd (EA). IKEA-logoen har nesten ikke endret seg gjennom konsernets historie, og 1967-versjonen er fremdeles symbolet for IKEAs virksomhet.</p>
+            </div>
+            
+            <div class="col50">
+                <img src="rsc/img/koarp.jpg" alt="Chair" width="100%" height="300px" class="imgContain">
+            </div>
+            
+        </div>
+        
+    </section>
+
+
+    <section class="topMarginMinus80">
+        <div class="mainContent">
+            <img src="rsc/img/logo_transformation.jpg" alt="Logo History" class="imgContain">
+        </div>
+    </section>
+    
+    
+    <section class="sectGrey sectLine">
+        
+        <div class="mainContentCol">
+            
+            <div class="col50">
+                <h2>Forretningsidéen</h2>
+                <p class="justify">IKEA-konseptet tar utgangspunkt i ideen om å tilby et sortiment av hjeminnredningsprodukter som de mange menneskene har råd til, ikke bare et fåtall. Vi oppnår dette ved å kombinere funksjon, kvalitet, design og verdi – alltid med tanke på bærekraft. IKEA-konseptet gjennomsyrer alle deler av virksomheten, fra design, råvarer, emballasje og distribusjon til forretningsmodellen vår. Målet vårt er å bidra til at flere mennesker får et bedre liv hjemme.</p>
+            </div>
+            
+            <div class=col50>
+                <h2>Franchisestruktur</h2>
+                <p class="justify">I begynnelsen av 1980-årene – da IKEA hadde varehus i 20 land og stadig vokste – innså IKEA-grunnleggeren Ingvar Kamprad behovet for å beskytte det unike IKEA-konseptet som en del av selskapets vekstkonsept. Han ønsket full uavhengighet og en langsiktig eierstruktur, og aksjemarkedet var derfor ikke noe alternativ. Han mente dessuten at alle selskapene under IKEA-paraplyen måtte bygge opp ressurser før de kunne utvide.</p>
+            </div>
+            
+        </div>
+        
+    </section>
+
+
+    <section class="vidBg">
+
+        <video autoplay loop muted>
+            <source src="rsc/vid/omoss5.mp4">
+        </video>
+
+        <div class="darken"></div>
+
+        <div class="mainContent center">
+            <div class="vSpace100"></div>
+            <h1 class="white thin">Mennesker og miljø</h1>
+            <div class="vSpace100"></div>
+        </div>
+
+    </section>
+
+
+
+    <section>
+
+        <div class="mainContentCol">
+            <div class="col50">
+                
+                <h2>Visjon og forretningsidé</h2>
+                <p class="justify">
+                    IKEAS visjon er «å skape en bedre hverdag for de mange menneskene».
+                    Vår forretningsidé er «å tilby et stort utvalg form- og funksjonsriktige
+                    hjeminnredningsprodukter til så lave priser at så mange
+                    mennesker som mulig har råd til å kjøpe dem».
+                </p>
+                <p class="justify">
+                    Vi arbeider hardt for å oppnå kvalitet til rimelige priser for kundene våre 
+                    gjennom optimering av hele verdikjeden og ved å bygge
+                    opp langsiktige leverandørforhold,
+                    investere i høyautomatisert produksjon og produsere i store volumer.
+                    Visjonen vår omfatter også mer enn hjeminnredning.
+                    Vi ønsker å skape en bedre hverdag for alle mennesker
+                    som berøres av virksomheten vår.
+                </p>
+            </div>
+            <div class="col50">
+                <h2>Investering for fremtiden</h2>
+                <p class="justify">
+                    IKEAs visjon er «å skape en bedre hverdag for de mange menneskene». IKEAs viktigste finansielle prinsipp er å vokse ved å bruke våre egne ressurser. Vi tjener med andre ord pengene før vi bruker dem. Dette gjør det mulig å foreta langsiktige investeringer for fremtiden.
+                </p>
+                <p class="justify">
+                    IKEAs visjon er grunnlaget for veksten vår. Vi ønsker å forsikre oss om at IKEA er tilgjengelig, slik at flere mennesker kan skape seg en bedre hverdag hjemme. Vi reinvesterer mesteparten av fortjenesten vår i eksisterende og nye IKEA-varehus samt i produktutvikling, bærekraftige løsninger og kontinuerlig reduksjon av prisene overfor kundene våre.
+                </p>
+            </div>   
+        </div>
+    </section>
+
+
+
+    <section>
+            
+        <div class="mainContentCol vCenter">
+
+            <div class="col50">
+                <h2>Vi satser tungt på en bærekraftig framtid</h2>
+                <p class="justify">IKEA ønsker å ha en positiv innvirkning på mennesker og miljø. Derfor satser vi stort på ting som virkelig betyr noe, fra å gå over til LED for hele belysningssortimentet vårt til å kjøpe inn all den bomullen vi bruker i produktene våre, fra mer bærekraftige kilder. Vi jobber også mot et mål om 100 prosent fornybar energi – å produsere like mye som vi forbruker i virksomheten – og om å kjøpe inn alt trevirket vi bruker fra mer bærekraftige kilder innen 2020. Siden 2009 har IKEA Group forpliktet seg til å investere 2,1 milliarder euro i innkjøp av utstyr til produksjon av vind- og solkraft. Men vi er ikke i mål ennå.</p>
+            </div>
+
+            <div class="col50">
+                <img src="rsc/img/windmill.jpg" alt="Vindmøller" width="100%" class="imgCover">
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="sectGrey sectLine">
+        <div class="mainContent center">
+            <h1>Nøkkeltall</h1>
+            <h2>2,1 millioner besøk på IKEA.com</h2>
+            <h3 class="thin">En økning på 9 % sammenlignet med regnskapsåret 2015</h3>
+
+            <div class="vSpace60"></div>
+
+            <div class="infoBoxContainer">
+                
+                <div class="infoBox center">
+                    <h1><i class="material-icons">chrome_reader_mode</i></h1>
+                    <h3>110 millioner</h3>
+                    <p>Besøk i katalog- og varehusapper
+                    </p>
+                </div>
+
+                <div class="infoBox center">
+                    <h1><i class="material-icons">store</i></h1>
+                    <h3>783 millioner</h3>
+                    <p>Varehusbesøk
+                    </p>
+                </div>
+
+                <div class="infoBox center">
+                    <h1><i class="material-icons">shopping_cart</i></h1>
+                    <h3>425 millioner</h3>
+                    <p>Kjøpesenterbesøk
+                    </p>
+                </div>
+
+
+            
+            
+            
+        </div>
+    </section>
+
+      <section class="banner vidBg">
+
+        <video src="rsc/vid/omoss4.mp4" autoplay loop muted="true"></video>
+        <div class="darken"></div>
+        <div class="mainContent center">
+            <div class="vSpace100"></div>
+            <h2 class="white">En del av din hverdag siden 1943</h2>
+            <div class="vSpace100"></div> 
+
+        </div>
+
+       
+
+    </section>
+
+    <section>
+        <div class="mainContent">
+            <h2 class="center">Konsernledelsen</h2>
+            <div class="vSpace60"></div>
+            <img src="rsc/img/konsern.jpg" class="imgContain">
+
+            <div class="vSpace40"></div>
+        </div>
+        <div class="mainContentCol">
+            <div class="col50">
+                <h4>Øverste rad, fra venstre:</h4>
+                <p class="justify"><small>
+                Giny Boer, Retail region South & East Europe.</br>
+                Steve Howard, Sustainability.</br>
+                Claudia Willvonseder, Marketing and Com&amp;In (Communication &amp; Interior design).</br>
+                Peter Agnefjäll, CEO & President.</br>
+                Gerard Groener, Centres.</br>
+                Marcus Baumgartner, Customer Fulfilment.
+                </small></p>
+            </div>
+            <div class="col50">
+                <h4>Nederste rad, fra venstre:</h4>
+                <p class="justify"><small>
+                Karin Sköld, CEO Assistant.</br>
+                Stefan Sjöstrand, Commercial.</br>
+                Michael Ward, Retail region North America & Scandinavia.</br>
+                Petra Hesser, Human Resource.</br>
+                Mikael Palmquist, Retail region Asia Pacific.</br>
+                Olivia Ross Wilson, Corporate Communications.</br>
+                Jeanette Söderberg, Retail region Central & West Europe.</br>
+                Lotta Lyrå, Development & Expansion.</br>
+                Alistair Davidson, CFO.
+                </small></p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div></div>
     </section>
 
 </main><!-- Main: Slutt -->
@@ -106,22 +383,78 @@ innholde i nettsiden være.
 
 
 
-<footer><!-- Footer: Start -->
+
+
+
+<footer class="bgFooter"><!-- Footer: Start -->
 <!-- 
 I footer-tag skal footeren være.
- -->
+    -->
 
-    <div id="footerTop"></div>
+    <div id="footerTop" class="hide"></div>
 
 
-    <div id="footerMain"></div>
+    <div id="footerMain">
+
+        <div class="content">
+
+            <div class="col50">
+                <div class="logo"></div>
+                <p>
+                    <span class="bold">Inter IKEA Holding S.A</span><br />
+                    Rue de Grass 100<br />
+                    6700 Arlon-Sterpenich<br />
+                    Belgia
+                </p>
+
+                <div class="vSpace20"></div>
+
+                <p><span class="bold">Kundeservice</span></p>
+                <ul class="footerNav">
+                    <li><a href="http://www.ikea.com/ms/no_NO/customer-service/about-our-products/planning-tools/index.html">Planleggingsverktøy</a></li>
+                    <li><a href="http://www.ikea.com/ms/no_NO/service-offer/index.html">Service og tjenester</a></li>
+                    <li><a href="http://www.ikea.com/ms/no_NO/customer_service/shop_offline/secure/betal_din_ordre.html">Betal din ordre</a></li>
+                    <li><a href="http://www.ikea.com/ms/no_NO/customer_service/kjoekken/kjoekken_kontaktskjema.html">Kjøkkenbestilling</a></li>
+                    <li><a href="http://www.ikea.com/ms/no_NO/customer_service/contact_us/index.html">Kontakt oss</a></li>
+                    <li><a href="http://www.ikea.com/ms/no_NO/service-offer/gavekort/index.html">Gavekort</a></li>
+                </ul>
+                
+            </div>
+
+            <div class="col50">
+                    <p class="justify">
+                        <span class="bold">Ansvarsfraskrivelse</span><br />
+                        Denne hjemmesiden er et fiktivt redesign av Ikeas hjemmeside, isolert rundt ett produkt. Den er laget i regi av faget WEB1100B, og er kun ment for faglig utvikling — ikke kommersielt bruk eller offentlig publisering på Internett. Alle bilder og videomateriale er hentet fra eksterne kilder, og vi påberoper oss ikke eierskap over disse. Vi har fått godkjennelse fra Ikeas PR-avdeling til å bruke deres egne bilder og videomateriale til dette skoleprosjektet.
+                    </p>
+                    <p>
+                        <span class="bold">Skoleoppgave</span><br />
+                        Skole: Høyskolen i Sørøst-Norge (HSN)<br />
+                        Emne: Web-utvikling og HCI (WEB1100B)<br />
+                        Prosjektstart: 20. September 2017
+                    </p>
+                    <p>
+                        <span class="bold">Gruppemedlemmer</span><br />
+                        Anders: anderskoo@live.no<br />
+                        Kim: kimviggo.pedersen@gmail.com<br />
+                        Lars Stian: larsstianf@outlook.com<br />
+                        Isak: isakhauge@gmail.com
+                    </p>
+                    <p>
+                        <span class="bold">Bildebruk og referanser</span><br />
+                        <a href="referanse.html">Referanseliste</a>
+                    </p>
+            </div>
+
+        </div>
+
+    </div>
 
 
     <div id="footerBottom">
-        <p class="footerCredits">
-            Silicon Valley Boys<br />
-            All rights reserved<br />
-            Copyright &copy;2017
+        <p class="footerCreds center">
+            Laget av Silicon Valley Boys<br />
+            KUN MED HTML OG CSS<br />
+            OPPHAVSRETT &copy;2017
         </p>
     </div>
 

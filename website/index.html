@@ -9,7 +9,7 @@ HEAD: START
 
 I head setter vi forskjellige
 instillinger for hele HTML-dokumenter,
-Som f.eks. CSS, tillel, og charset.
+Som f.eks. CSS, tittel, og charset.
 
 -->
 
@@ -18,13 +18,18 @@ Som f.eks. CSS, tillel, og charset.
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!-- CSS-REFERANSE: -->
-    <link rel="stylesheet" type="text/css" href="rsc/css/style.css">
+    <!-- CSS REFERENCES: -->
+    <link rel="stylesheet" type="text/css" href="rsc/css/main_theme.css">
+    <link rel="stylesheet" type="text/css" href="rsc/css/index.css">
 
-    <!-- GOOGLE FONT REFERANSE -->
+    <!-- GOOGLE FONT REFERANSE: -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
 
-    <title>Website title</title>
+    <!-- GOOGLE MATERIAL ICONS REFERENCE: -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+
+    <title>Oppland - Ikea</title>
 </head>
 
 <!-- 
@@ -47,28 +52,72 @@ BODY: START
 
 Body er selve hovedplassen for HTML.
 Innenfor body-taggene lager vi innholdet
-for nettside vår.
+for nettsiden vår.
 
 -->
 
 <body>
 
 
+<a href="#top" id="floatingTop" class="floatingBtn"></a>
 
-
-
-
-
-
+<div id="top"></div>
 <header><!-- Header: Start -->
 <!-- 
 INFO: I header-tag (ikke head) så skal
 man f.eks. ha menybar/statusbar.
- -->
-
+    -->
     <nav>
-        <div id="navBarElementLeft">LEFT</div>
-        <div id="navBarElementRight">RIGHT</div>
+        <div class="content">
+            <div id="navBarElementLeft">
+                <a id="logo" href="index.html"></a>
+            </div>
+
+            <div id="navBarElementRight">
+                <div id="navMenuContainer">
+                    
+                    <label id="closeMenuBtn" for="closeMenu"><!-- This is the radio button that closes the menu. -->
+                    <input type="radio" id="closeMenu" name="toggle" checked>
+                    <span><i class="material-icons">close</i></span>
+                    </label>
+                    
+                    <label id="openMenuBtn" for="openMenu"><!-- This is the radio button that opens the menu. -->
+                    <input type="radio" id="openMenu" name="toggle">
+                    <span><i class="material-icons">menu</i>&nbsp;&nbsp;Meny</span>
+                    
+                    <div id="openMenuBackground">
+                        <div id="navMenu" class="mainContentCol">
+
+                            <div class="col50 white">
+                                <h3>Hovedmeny</h3>
+                                <ul class="menuNav">
+                                    <li><a href="index.html">Hjem</a></li>
+                                    <li><a href="produkt.html">Produkt</a></li>
+                                    <li><a href="omoss.html">Om oss</a></li>
+                                    <li><a href="kontakt.html">Kontakt oss</a></li>
+                                </ul>
+                            </div>
+                            <div class="col50 white">
+                                <h3>Kundeservice</h3>
+                                <ul class="menuNav">
+                                    <li><a href="http://www.ikea.com/ms/no_NO/customer-service/about-our-products/planning-tools/index.html">Planleggingsverktøy</a></li>
+                                    <li><a href="http://www.ikea.com/ms/no_NO/service-offer/index.html">Service og tjenester</a></li>
+                                    <li><a href="http://www.ikea.com/ms/no_NO/customer_service/shop_offline/secure/betal_din_ordre.html">Betal din ordre</a></li>
+                                    <li><a href="http://www.ikea.com/ms/no_NO/customer_service/kjoekken/kjoekken_kontaktskjema.html">Kjøkkenbestilling</a></li>
+                                    <li><a href="http://www.ikea.com/ms/no_NO/customer_service/contact_us/index.html">Kontakt oss</a></li>
+                                    <li><a href="http://www.ikea.com/ms/no_NO/service-offer/gavekort/index.html">Gavekort</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </label>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+        </div>
     </nav>
 
 
@@ -88,13 +137,169 @@ innholde i nettsiden være.
  -->
 
 <!-- Landingsside -->
-    <section id="bannerMain">
+    <section id="bannerMain" class="banner sectFullScreen">
+        
+        <div class="darken"></div>
 
-        <div>
-            <h1 class="white">Velkommen</h1>
-            <h2>Silicon Valley Boys</h2>
+        <div class="mainContent">
+            <h1 class="white center">Sov bedre enn noensinne</h1>
+            <h2 class="white center">Få din Oppland-seng i dag</h2>
+            <h1 class="center"><a class="mediaBtn largeBtn" href="produkt.html">Se produkt</a></h1>
         </div>
 
+        <a href="#section01" id="scrollBounce" class="scrollBounce"></a>
+
+    </section>
+
+    <div id="section01"></div><!-- Scroll button tag -->
+    
+    <section>
+        <div class="mainContent center">
+
+            <h1 class="center">Oppland</h1>
+            <h2 class="center">Luksus til rimelig pris</h2>
+                
+            <div class="vSpace60"></div>
+                    
+            <div class="infoBoxContainer">
+
+                <div class="infoBox center">
+                    <h1><i class="material-icons">verified_user</i></h1>
+                    <h3>Bærekraftig materiale</h3>
+                    <p>
+                        Laget av nordisk Ask.
+                    </p>
+                </div>
+
+                <div class="infoBox center">
+                    <h1><i class="material-icons">account_balance</i></h1>
+                    <h3>Lukseriøs</h3>
+                    <p>
+                        Stor seng med hodegavl<br />
+                        og børstet trefiner.
+                    </p>
+                </div>
+
+                <div class="infoBox center">
+                    <h1><i class="material-icons">zoom_out_map</i></h1>
+                    <h3>Queen Size</h3>
+                    <p>
+                        Sengen kommer i to størrelser.<br />
+                        180x200cm og 160x200cm.
+                    </p>
+                </div>
+
+            </div><!-- InfoBox End -->
+       
+            <div class="vSpace60"></div>
+            <h1 class="center">2.995,- kr</h1>
+            <p>Sengebunn, madrass og sengetøy selges separat.</p>
+            <a href="produkt.html" class="mediaBtn largeBtn">Gå til produktsiden</a>
+
+        </div>
+    </section>
+
+    <section id="ashTexture">
+        
+        <div class="darken"></div>
+        <div class="mainContent center">
+            <div class="vSpace40"></div>
+            <h1 class="white thin">Laget av skandinavisk Ask</h1>
+            <h3 class="white thin">Beiset ask med brunbeiset askefiner</h3>
+            <div class="vSpace40"></div>
+        </div>
+        
+    </section>
+    
+    <section class="sectGrey sectLines">
+        <div class="mainContent">
+
+            <h1 class="thin">Designertanker</h1>
+            <blockquote>
+                «Det var spennende å jobbe med en ny type børstet trefiner. Det ga hele soveromsserien OPPLAND det rette kvalitetspreget, noe som også kan ses i de brukervennlige håndtakene og skuffene som lukker seg mykt og sakte. Det er viktig med tekstiler og myke materialer for å få et innbydende og koselig soverom. Derfor har hodegavlen et vaskbart trekk som er behagelig å lene seg inntil når du vil lese på senga. Jeg håper at møbelet bidrar til å gi deg en god natts søvn.»
+            </blockquote>
+            <h4 class="right">Designer Ehlén Johansson</h4>
+
+        </div>
+    </section>
+
+    <section class="vidBg">
+
+        <video autoplay loop muted>
+            <source src="rsc/vid/ikea_beds.mp4" type="video/mp4">    
+        </video> 
+
+        <div class="darken"></div>
+        <div class="mainContent white center">
+
+            <div class="vSpace100"></div>
+            <div class="vSpace100"></div>
+            <h1 class="white">Sov bedre i en god seng</h1>
+            <h2 class="white thin">
+                Vi vet at en god seng er en<br />
+                forutsenting for bra<br />søvnkvalitet.
+            </h2>
+            <div class="vSpace100"></div>
+            <div class="vSpace100"></div>
+
+        </div>
+    </section>
+
+    <section>
+
+        <div>
+            
+        </div>
+
+    </section>
+
+    <section>
+        <div class="mainContentCol vCenter">
+            <div class="col50">
+                <img src="rsc/img/oppland.jpg" alt="Oppland" width="100%" height="300px" class="imgContain">
+            </div>
+
+            <div class="col50">
+                <h3>Nøkkelegenskaper</h3>
+                <p class="justify">
+                    Om du leser, surfer eller ser TV i sengen, er den myke hodegavlen behagelig å lene seg mot. Sengen er enkel å holde ren siden du kan ta av trekket og vaske det i maskin. Det naturlige årringmønsteret og den tydelige teksturen i treet fremheves ved først å børste askefineren og deretter mattlakke den. I tillegg vil trefineren vil gjøre at sengen bare blir vakrere med årene. Sengen har også justerbare sengesider slik at du kan bruke madrasser av ulike tykkelser.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="sectLine">
+        <div class="mainContentCol vCenter">
+
+            <div class="col50">
+                <h3>Vi anbefaler HOKKÅSEN&reg; madrass</h3>
+                <p class="justify">
+                    Med HOKKÅSEN&reg; madrass i sengen, sover du bedre. Det gjør du fordi madrassen har et lag viskoelastisk polyeter som former seg etter kroppens konturer, avlaster press og hjelper deg med å slappe av.
+                </p>
+                <a href="http://www.ikea.com/no/no/catalog/products/30293407/" class="mediaBtn mediumBtn">Se produkt</a>
+            </div>
+
+            <div class="col50">
+                <img src="rsc/img/mattress.jpg" alt="Oppland" width="100%" height="300px" class="imgContain">
+            </div>
+    
+                
+        </div>
+    </section>
+
+    <section class="sectLine">
+        <div class="mainContent center">
+            <h1>Oppland sengeramme</h1>
+            <h2>Beiset ask med brunbeiset askefiner</h2>
+            <div class="vSpace80"></div>
+            <img src="rsc/img/oppland.jpg" alt="" width="100%" height="400px" class="imgContain">
+            <div class="vSpace40"></div>
+            <h3 class="regular">
+                For mer informasjon eller netthandel,<br />
+                gå til produktsiden</h3>
+            <h1><a href="produkt.html" class="mediaBtn largeBtn">Se produkt</a></h1>
+        </div>
     </section>
 
 </main><!-- Main: Slutt -->
@@ -106,22 +311,75 @@ innholde i nettsiden være.
 
 
 
-<footer><!-- Footer: Start -->
+<footer class="bgFooter"><!-- Footer: Start -->
 <!-- 
 I footer-tag skal footeren være.
- -->
+    -->
 
-    <div id="footerTop"></div>
+    <div id="footerTop" class="hide"></div>
 
 
-    <div id="footerMain"></div>
+    <div id="footerMain">
+
+        <div class="content">
+
+            <div class="col50">
+                <div class="logo"></div>
+                <p>
+                    <span class="bold">Inter IKEA Holding S.A</span><br />
+                    Rue de Grass 100<br />
+                    6700 Arlon-Sterpenich<br />
+                    Belgia
+                </p>
+
+                <div class="vSpace20"></div>
+
+                <p><span class="bold">Kundeservice</span></p>
+                <ul class="footerNav">
+                    <li><a href="http://www.ikea.com/ms/no_NO/customer-service/about-our-products/planning-tools/index.html">Planleggingsverktøy</a></li>
+                    <li><a href="http://www.ikea.com/ms/no_NO/service-offer/index.html">Service og tjenester</a></li>
+                    <li><a href="http://www.ikea.com/ms/no_NO/customer_service/shop_offline/secure/betal_din_ordre.html">Betal din ordre</a></li>
+                    <li><a href="http://www.ikea.com/ms/no_NO/customer_service/kjoekken/kjoekken_kontaktskjema.html">Kjøkkenbestilling</a></li>
+                    <li><a href="http://www.ikea.com/ms/no_NO/customer_service/contact_us/index.html">Kontakt oss</a></li>
+                    <li><a href="http://www.ikea.com/ms/no_NO/service-offer/gavekort/index.html">Gavekort</a></li>
+                </ul>
+                
+            </div>
+
+            <div class="col50">
+                    <p class="justify">
+                        <span class="bold">Ansvarsfraskrivelse</span><br />
+                        Denne hjemmesiden er et fiktivt redesign av Ikeas hjemmeside, isolert rundt ett produkt. Den er laget i regi av faget WEB1100B, og er kun ment for faglig utvikling — ikke kommersielt bruk eller offentlig publisering på Internett. Alle bilder og videomateriale er hentet fra eksterne kilder, og vi påberoper oss ikke eierskap over disse. Vi har fått godkjennelse fra Ikeas PR-avdeling til å bruke deres egne bilder og videomateriale til dette skoleprosjektet.
+                    </p>
+                    <p>
+                        <span class="bold">Skoleoppgave</span><br />
+                        Skole: Høyskolen i Sørøst-Norge (HSN)<br />
+                        Emne: Web-utvikling og HCI (WEB1100B)<br />
+                        Prosjektstart: 20. September 2017
+                    </p>
+                    <p>
+                        <span class="bold">Gruppemedlemmer</span><br />
+                        Anders: anderskoo@live.no<br />
+                        Kim: kimviggo.pedersen@gmail.com<br />
+                        Lars Stian: larsstianf@outlook.com<br />
+                        Isak: isakhauge@gmail.com
+                    </p>
+                    <p>
+                        <span class="bold">Bildebruk og referanser</span><br />
+                        <a href="referanse.html">Referanseliste</a>
+                    </p>
+            </div>
+
+        </div>
+
+    </div>
 
 
     <div id="footerBottom">
-        <p class="footerCredits">
-            Silicon Valley Boys<br />
-            All rights reserved<br />
-            Copyright &copy;2017
+        <p class="footerCreds center">
+            Laget av Silicon Valley Boys<br />
+            KUN MED HTML OG CSS<br />
+            OPPHAVSRETT &copy;2017
         </p>
     </div>
 

@@ -1,0 +1,1228 @@
+/*
+############################################################
+*/
+
+
+/*
+Theme: Modernized Ikea
+Authors: Anders Koo, Kim Pedersen, Lars Stian Fagerlid, Isak Hauge
+Date: 20.09.2017
+*/
+
+
+/*
+############################################################
+*/
+
+
+/*
+---------------------------------------
+VARIABLES: Start
+---------------------------------------
+*/
+
+
+:root{
+    /* DEFAULT DIMENSIONS: */
+    --navHeight: 60px; /* Site-wide nav menu height. */
+    --contentMaxWidth: 900px; /* Default .content dimensions. */
+    --contentMargin: 80px; /* Default vertical .content margin. */
+    --hzMargin: 30px; /* Default horizontal margin. */
+
+    /* THEME COLORS: */
+    --ikeaBlue: #002b8e; /* Official Ikea blue. */
+    --ikeaYellow: #ffc502; /* Official Ikea yellow. */
+    --mainBg: #f1f1f1; /* Default background color. */
+    --navBg: white; /* Default nav bar background color. */
+    --footerBg: #002b8e; /* Default footer background color. */
+
+    /* THEME LOGO: */
+    --logo: url("../img/ikea_logo.svg");
+
+    /* THEME TYPOGRAPHY: */
+    --font: 'Roboto', sans-serif; /* Default theme font. */
+    --h1Size: 40px; /* Default h1 size. */
+    --h2Size: 30px; /* Default h2 size. */
+    --h3Size: 20px; /* Default h3 size. */
+    --h4Size: 16px; /* Default h4 size. */
+    --pSize: 14px; /* Default p size. */
+    --navFontSize: 14px; /* Default navigation text size. */
+    --fontColorDefault: #333; /* Default font color. */
+    --footerMainFontSize: 12px;
+    --footerMainFontWeight: 300;
+
+    /* BUTTONS: */
+    --btnShadow: 0 2px 2px rgba(0,0,0,0.2);
+    --btnShadowHover: 0 8px 20px rgba(0,0,0,0.2);
+    --btnAnimInit: translate(0, 0);
+    --btnAnimHover: translate(0, -5px);
+    --btnAnimDuration: all ease-in-out .2s;
+    --menuBtnShadow: 0 1px 1px rgba(0,0,0,0.2);
+    --menuBtnHoverShadow: 0 2px 10px rgba(0,0,0,0.4);
+
+    /* FLOATING BUTTON: */
+    --floatingBtnBg: url("../img/arrowUp.svg");
+    --scrollBtn: url("../img/arrowDownWhite.svg");
+
+    /* THEME EFFECTS: */
+    --boxShadow: 0 10px 40px rgba(0,0,0,0.2);
+    --navShadow: 0 2px 20px rgba(0,0,0,0.2);
+    --navMenuShadow: 0 20px 40px rgba(0,0,0,0.5);
+    --hzLinkAnim: translate(5px, 0);
+    --hzLinkAnimDuration: transform .4s ease;
+    --yellowLinkAnimDuration: color .4s ease;
+}
+
+/*
+---------------------------------------
+VARIABLES: End
+---------------------------------------
+*/
+
+
+/*
+############################################################
+*/
+
+
+/*
+---------------------------------------
+THEME COMPONENTS: Start
+---------------------------------------
+*/
+
+
+/* NAVIGATION MENU: */
+/* Nothing to add at this point. */
+
+
+/* MAIN CONTENT: */
+.content{ /* Restricting content to a give max width. */
+    display: flex;
+    box-sizing: content-box;
+    margin: 0 auto;
+    width: 100%;
+        max-width: var(--contentMaxWidth);
+    z-index: 5;
+}
+.mainContent{ /* Restricting main content to a give max width. */
+    display: block;
+    background-color: inherit;
+    margin: var(--contentMargin) auto;
+    padding: var(--contentMargin) auto;
+    vertical-align: middle;
+    width: 100%;
+        max-width: var(--contentMaxWidth);
+    z-index: 5;
+}
+.mainContentCol{ /* Restricting main content to a give max width, and preparing. */
+    display: flex;
+    margin: var(--contentMargin) auto;
+    padding: var(--contentMargin) auto;
+    vertical-align: middle;
+    width: 100%;
+        max-width: var(--contentMaxWidth);
+}
+.mainContent ~ .mainContentCol{
+    margin-top: -80px; /* This nees to be equal to contentMargin variable */
+    padding-top: 0;
+}
+
+.sectLine{ /* Horizontal top line for sections. */
+    border-top: solid 1px #E5E5E5;
+}
+.sectLines{ /* Horizontal lines for sections. */
+    border-top: solid 1px #E5E5E5;
+    border-bottom: solid 1px #E5E5E5;
+}
+.sectGrey{  /* Grey background for sections. */
+    background-color: #F9F9F9;
+}
+.sectBlue{
+    background-color: var(--ikeaBlue);
+}
+.vCenter{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.imgCover{
+    object-fit: cover;
+    object-position: center;
+}
+.imgContain{
+    object-fit: contain;
+    object-position: center;
+}
+.sectFullScreen{
+    height: 100vh;
+    width: 100%;
+}
+
+/* FOOTER: */
+.bgFooter{ /* Default background color for the footer. */
+    background-color: var(--footerBg);
+}
+
+
+/* BUTTONS: */
+.mediumBtn{ /* Defaut medium-size button. */
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    font-weight: 400;
+    /* See variables. */
+    box-shadow: var(--btnShadow);
+    transform: var(--btnAnimInit);
+        -webkit-transform: var(--btnAnimInit);
+        -moz-transform: var(--btnAnimInit);
+        -ms-transform: var(--btnAnimInit);
+        -o-transform: var(--btnAnimInit);
+    transition: var(--btnAnimDuration);
+        -webkit-transition: var(--btnAnimDuration);
+        -moz-transition: var(--btnAnimDuration);
+        -ms-transition: var(--btnAnimDuration);
+        -o-transition: var(--btnAnimDuration);
+}
+.mediumBtn:hover{ /* Defaut medium-size button (hover-effect). */
+    box-shadow: var(--btnShadowHover);
+    transform: var(--btnAnimHover);
+        -webkit-transform: var(--btnAnimHover);
+        -moz-transform: var(--btnAnimHover);
+        -ms-transform: var(--btnAnimHover);
+        -o-transform: var(--btnAnimHover);
+    transition: var(--btnAnimDuration);
+        -webkit-transition: var(--btnAnimDuration);
+        -moz-transition: var(--btnAnimDuration);
+        -ms-transition: var(--btnAnimDuration);
+        -o-transition: var(--btnAnimDuration);
+}
+.smallBtn{ /* Defaut small-size button. */
+    display: inline-block;
+    text-decoration: none;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 3px;
+    font-weight: 400;
+    /* See variables. */
+    box-shadow: var(--btnShadow);
+    transform: var(--btnAnimInit);
+        -webkit-transform: var(--btnAnimInit);
+        -moz-transform: var(--btnAnimInit);
+        -ms-transform: var(--btnAnimInit);
+        -o-transform: var(--btnAnimInit);
+    transition: var(--btnAnimDuration);
+        -webkit-transition: var(--btnAnimDuration);
+        -moz-transition: var(--btnAnimDuration);
+        -ms-transition: var(--btnAnimDuration);
+        -o-transition: var(--btnAnimDuration);
+}
+.smallBtn:hover{ /* Defaut small-size button (hover-effect). */
+    box-shadow: var(--btnShadowHover);
+    transform: var(--btnAnimHover);
+        -webkit-transform: var(--btnAnimHover);
+        -moz-transform: var(--btnAnimHover);
+        -ms-transform: var(--btnAnimHover);
+        -o-transform: var(--btnAnimHover);
+    transition: var(--btnAnimDuration);
+        -webkit-transition: var(--btnAnimDuration);
+        -moz-transition: var(--btnAnimDuration);
+        -ms-transition: var(--btnAnimDuration);
+        -o-transition: var(--btnAnimDuration);
+}
+
+.largeBtn{ /* Defaut large-size button. */
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 20px;
+    border-radius: 5px;
+    font-weight: 400;
+    /* See variables. */
+    box-shadow: var(--btnShadow);
+    transform: var(--btnAnimInit);
+        -webkit-transform: var(--btnAnimInit);
+        -moz-transform: var(--btnAnimInit);
+        -ms-transform: var(--btnAnimInit);
+        -o-transform: var(--btnAnimInit);
+    transition: var(--btnAnimDuration);
+        -webkit-transition: var(--btnAnimDuration);
+        -moz-transition: var(--btnAnimDuration);
+        -ms-transition: var(--btnAnimDuration);
+        -o-transition: var(--btnAnimDuration);
+}
+.largeBtn:hover{ /* Defaut large-size button (hover-effect). */
+    box-shadow: var(--btnShadowHover);
+    transform: var(--btnAnimHover);
+        -webkit-transform: var(--btnAnimHover);
+        -moz-transform: var(--btnAnimHover);
+        -ms-transform: var(--btnAnimHover);
+        -o-transform: var(--btnAnimHover);
+    transition: var(--btnAnimDuration);
+        -webkit-transition: var(--btnAnimDuration);
+        -moz-transition: var(--btnAnimDuration);
+        -ms-transition: var(--btnAnimDuration);
+        -o-transition: var(--btnAnimDuration);
+}
+.normalBtn{ /* Defaut button style. */
+    background-color: #F7F7F7;
+    color: var(--ikeaBlue);
+    border: none;
+}
+.normalBtn:hover{color: var(--ikeaBlue);}
+.mediaBtn{ /* Media (dark background) button style. */
+    background-color: var(--ikeaBlue);
+    color: white !important;
+    border: none;
+}
+.mediaBtn:hover{color:white;}
+
+
+/* IKEA FORM STYLE: */
+.ikeaForm{
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    margin: 0 auto;
+}
+.ikeaForm input[type="text"]::placeholder,
+.ikeaForm input[type="mail"]::placeholder,
+.ikeaForm textarea::placeholder{
+    color: rgba(0, 0, 0, 0.4);
+}
+.ikeaForm input[type="text"],
+.ikeaForm input[type="mail"],
+.ikeaForm textarea{
+    background-color: #f7f7f7;
+    color: var(--fontColorDefault);
+    border: none;
+
+    margin: 10px var(--hzMargin);
+    padding: 10px 15px;
+    font-family: var(--font);
+    font-size: var(--pSize);
+
+    overflow: hidden;
+    border-radius: 5px;
+
+    box-shadow: var(--btnShadow);
+}
+.ikeaForm input[type="text"],
+.ikeaForm input[type="mail"],
+.ikeaForm input[type="submit"],
+.ikeaForm textarea,
+.ikeaForm select{
+    margin: 10px var(--hzMargin);
+}
+.ikeaForm input[type="submit"]{
+    display: inline-block;
+    align-self: center;
+}
+.ikeaForm input[type="submit"]:hover{
+    cursor: pointer;
+}
+.ikeaForm textarea{
+    height: 200px;
+}
+
+
+/* VIRTUAL SPACE BLOCKS: */
+.vSpace20{
+    display: block;
+    height: 20px;
+    width: 100%;
+}
+.vSpace40{
+    display: block;
+    height: 40px;
+    width: 100%;
+}
+.vSpace60{
+    display: block;
+    height: 60px;
+    width: 100%;
+}
+.vSpace80{
+    display: block;
+    height: 80px;
+    width: 100%;
+}
+.vSpace100{
+    display: block;
+    height: 100px;
+    width: 100%;
+}
+.topMarginMinus80{
+    margin-top: -80px;
+}
+
+
+/* EFFECTS: */
+.darken{ /* Dark transparent layer on top of images. */
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+    height: 100%;
+        min-height: 100%;
+        max-height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+.blurLight{
+    filter: blur(1px);
+}
+
+
+/*
+---------------------------------------
+THEME COMPONENTS: End
+---------------------------------------
+*/
+
+
+/*
+############################################################
+*/
+
+/* GLOBAL CONFIGURATIONS: */
+html, body, html *, body *{
+    box-sizing: content-box; /* Correction initial box-sizing style. */
+    text-rendering: optimizeLegibility; /* Smooth font (Chrome and Safari). */
+    -moz-osx-font-smoothing: grayscale; /* Smooth font (Firefox). */
+    font-feature-settings: 'liga'; /* Smooth font (Internet Explorer and Edge). */
+}
+body{margin: 0; padding: 0;} /* Correcting initial style. */
+
+/*
+############################################################
+*/
+
+
+/*
+---------------------------------------
+THEME MAIN STYLE: Start
+---------------------------------------
+*/
+
+
+/* TYPOGRAPHY: */
+body, h1, h2, h3, h4, h5, p, a, ul, li, td, tr{
+    font-family: var(--font); /* Applying site-wide font family to given elements. */
+}
+h1, h2, h3, h4, h5, p, a{
+    margin: 0; /* Initial margin reset. */
+}
+.mainContent h1, .mainContent h2, .mainContent h3, .mainContent h4, .mainContent h5, .mainContent p, .mainContent a,  .mainContent ul,
+.mainContentCol h1, .mainContentCol h2, .mainContentCol h3, .mainContentCol h4, .mainContentCol h5, .mainContentCol p, .mainContentCol a, .mainContentCol ul,
+footer h1, footer h2, footer h3, footer h4, footer h5, footer p, footer a, footer ul{ /* Setting a site-wide horizontal margin to all text elements. */
+    margin-left: var(--hzMargin);
+    margin-right: var(--hzMargin);
+}
+h1{
+    font-size: var(--h1Size);
+    color: var(--fontColorDefault);
+}
+h2{
+    font-size: var(--h2Size);
+    color: var(--fontColorDefault);
+    font-weight: 400;
+}
+h3{
+    font-size: var(--h3Size);
+    color: var(--fontColorDefault);
+}
+h4{
+    font-size: var(--h4Size);
+    color: var(--fontColorDefault);
+}
+p{
+    font-size: var(--pSize);
+    color: var(--fontColorDefault);
+    line-height: 1.5em;
+}
+a{
+    font-size: inherit;
+    text-decoration: none;
+}
+main a{
+    color: inherit;
+}
+main a:hover{
+    color: var(--ikeaBlue);
+}
+main .sectBlue a:hover{
+    color: var(--ikeaYellow);
+}
+ul, li, td, tr, th{
+    font-size: var(--pSize);
+    color: inherit);
+}
+main ul{
+    padding: 0;
+    padding-left: 20px;
+}
+main li{
+    line-height: 1.5em;
+    margin-bottom: 10px;
+    text-align: inherit;
+}
+blockquote{
+    padding: 0;
+    margin: 0 30px;
+    font-size: 18px;
+    line-height: 1.8em;
+    font-weight: 300;
+    letter-spacing: 0.03em;
+    /* word-spacing: 0.05em; */
+    text-align: justify;
+
+}
+hr{
+    border: 0;
+    height: 0;
+    border-top: 1px solid #ccc;
+}
+
+h1 ~ h1{margin-top: 20px;}
+h2 ~ h2{margin-top: 20px;}
+h3 ~ h3{margin-top: 20px;}
+h4 ~ h4{margin-top: 20px;}
+h5 ~ h5{margin-top: 20px;}
+p ~ p{margin-top: 20px;}
+a ~ a{margin-top: 20px;}
+
+h1 ~ h2{margin-top: 20px;}
+h1 ~ h3{margin-top: 20px;}
+h1 ~ h4{margin-top: 20px;}
+h1 ~ h5{margin-top: 20px;}
+h1 ~ p{margin-top: 20px;}
+h1 ~ a{margin-top: 20px;}
+h1 ~ ul{margin-top: 20px;}
+h1 ~ ol{margin-top: 20px;}
+h1 ~ blockquote{margin-top: 30px;}
+
+h2 ~ h1{margin-top: 40px;}
+h2 ~ h3{margin-top: 20px;}
+h2 ~ h4{margin-top: 20px;}
+h2 ~ h5{margin-top: 20px;}
+h2 ~ p{margin-top: 20px;}
+h2 ~ a{margin-top: 20px;}
+h2 ~ ul{margin-top: 20px;}
+h2 ~ ol{margin-top: 20px;}
+
+h3 ~ h1{margin-top: 40px;}
+h3 ~ h2{margin-top: 40px;}
+h3 ~ h4{margin-top: 20px;}
+h3 ~ h5{margin-top: 20px;}
+h3 ~ p{margin-top: 20px;}
+h3 ~ a{margin-top: 20px;}
+h3 ~ ul{margin-top: 20px;}
+h3 ~ ol{margin-top: 20px;}
+
+h4 ~ h1{margin-top: 40px;}
+h4 ~ h2{margin-top: 40px;}
+h4 ~ h3{margin-top: 40px;}
+h4 ~ h5{margin-top: 20px;}
+h4 ~ p{margin-top: 20px;}
+h4 ~ a{margin-top: 20px;}
+h4 ~ ul{margin-top: 20px;}
+h4 ~ ol{margin-top: 20px;}
+
+h5 ~ h1{margin-top: 40px;}
+h5 ~ h2{margin-top: 40px;}
+h5 ~ h3{margin-top: 40px;}
+h5 ~ h4{margin-top: 40px;}
+h5 ~ p{margin-top: 20px;}
+h5 ~ a{margin-top: 20px;}
+h5 ~ ul{margin-top: 20px;}
+h5 ~ ol{margin-top: 20px;}
+
+p ~ h1{margin-top: 60px;}
+p ~ h2{margin-top: 60px;}
+p ~ h3{margin-top: 60px;}
+p ~ h4{margin-top: 40px;}
+p ~ h5{margin-top: 40px;}
+p ~ a{margin-top: 20px;}
+
+a ~ h1{margin-top: 20px;}
+a ~ h2{margin-top: 20px;}
+a ~ h3{margin-top: 20px;}
+a ~ h4{margin-top: 20px;}
+a ~ h5{margin-top: 20px;}
+a ~ p{margin-top: 20px;}
+
+
+
+
+/* NAVIGATION AND HEADER: */
+nav{ /* Main navigation bar. */
+    display: table;
+    width: 100%;
+        max-width: 100%;
+        min-width: 100%;
+    height: var(--navHeight);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+nav::before{ /* A small hack made to make the nav drop shadow better looking. */
+    display: hidden;
+    content: "";
+    background-color: var(--navBg);
+    width: 200%;
+        max-width: 200%;
+        min-width: 200%;
+    height: var(--navHeight);
+    box-shadow: var(--navShadow);
+    position: fixed;
+    top: 0;
+    left: -100px;
+    z-index: -1;
+}
+#navBarElementLeft{ /* Left div inside the nav menu. */
+    float: left;
+    width: 50%;
+        max-width: 50%;
+        min-width: 50%;
+    height: var(--navHeight);
+}
+#navBarElementRight{ /* Right div inside the nav menu. */
+    float: left;
+    text-align: right;
+    width: 50%;
+        max-width: 50%;
+        min-width: 50%;
+    height: var(--navHeight);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#logo{ /* Nav logo. */
+    width: 100px;
+    height: var(--navHeight);
+    float: left;
+    display: block;
+    margin: 0 var(--hzMargin);
+    background-image: var(--logo);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.logo{ /* General logo for use anywhere. */
+    width: 100px;
+    height: var(--navHeight);
+    display: block;
+    margin: 0 var(--hzMargin);
+    background-image: var(--logo);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+#navMenu h1, #navMenu h2, #navMenu h3, #navMenu h4, #navMenu p, #navMenu a{ /* All text within this ID to be white. */
+    color: white;
+}
+#navMenu a{
+    color: white;
+    transition: var(--yellowLinkAnimDuration);
+    -webkit-transition: var(--yellowLinkAnimDuration);
+    -moz-transition: var(--yellowLinkAnimDuration);
+    -ms-transition: var(--yellowLinkAnimDuration);
+    -o-transition: var(--yellowLinkAnimDuration);
+}
+#navMenu a:hover{
+    color: var(--ikeaYellow);
+    transition: var(--yellowLinkAnimDuration);
+    -webkit-transition: var(--yellowLinkAnimDuration);
+    -moz-transition: var(--yellowLinkAnimDuration);
+    -ms-transition: var(--yellowLinkAnimDuration);
+    -o-transition: var(--yellowLinkAnimDuration);
+}
+#navMenu li{
+    transform: translate(0,0);
+    -webkit-transform: translate(0,0);
+    -moz-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    -o-transform: translate(0,0);
+    transition: var(--hzLinkAnimDuration);
+    -webkit-transition: var(--hzLinkAnimDuration);
+    -moz-transition: var(--hzLinkAnimDuration);
+    -ms-transition: var(--hzLinkAnimDuration);
+    -o-transition: var(--hzLinkAnimDuration);
+}
+#navMenu li:hover{
+    transform: var(--hzLinkAnim);
+    -webkit-transform: var(--hzLinkAnim);
+    -moz-transform: var(--hzLinkAnim);
+    -ms-transform: var(--hzLinkAnim);
+    -o-transform: var(--hzLinkAnim);
+    transition: var(--hzLinkAnimDuration);
+    -webkit-transition: var(--hzLinkAnimDuration);
+    -moz-transition: var(--hzLinkAnimDuration);
+    -ms-transition: var(--hzLinkAnimDuration);
+    -o-transition: var(--hzLinkAnimDuration);
+}
+#navMenuContainer{ /* Navigation menu container div. */
+    display: flex;
+    align-content: flex-end;
+    justify-content: flex-end;
+}
+#openMenuBtn span, #closeMenuBtn span{ /* Navigation menu buttons. */
+    padding: 7px 10px;
+    border: none;
+    color: white;
+    background: var(--ikeaBlue);
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 5px;
+    box-shadow: none;
+    transition: all .5s ease-in-out;
+    display: block;
+}
+#openMenuBtn{ /* Defining margins for nav buttons. */
+    margin-right: 30px;
+}
+#closeMenuBtn{ /* Defining margins for nav buttons. */
+    margin-right: 10px;
+}
+nav input[type="radio"]{ /* Radio button hack. */
+    cursor: pointer;
+    opacity: 0;
+    position: absolute;
+}
+#openMenuBtn:hover span,
+#closeMenuBtn:hover span{ /* Navigation menu buttons (hover-effects). */
+    color: var(--ikeaYellow);
+    box-shadow: var(--menuBtnHoverShadow);
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+}
+#closeMenu:checked ~ span{ /* Show close button after open button is clicked. */
+    opacity: 0;
+    transition: all .2s ease-in-out;
+}
+#openMenu:checked ~ span{ /* Show close button after open button is clicked. */
+    opacity: 1;
+    transition: all .2s ease-in-out;
+}
+#openMenuBackground{ /* Nav menu background style. */
+    background-color: rgba(0,43,142,0.97);
+    position: fixed;
+    width: 100%;
+    /* height: 100vh; */
+    left: 0;
+    top: var(--navHeight);
+    box-shadow: var(--navMenuShadow);
+    transform: translate(0, -100vh);
+    z-index: -2;
+    transition: all .5s ease-in-out;
+}
+#openMenu:checked ~ span ~ #openMenuBackground{ /* Show menu after open button is clicked. */
+    position: fixed;
+    width: 100%;
+    display: block;
+    left: 0;
+    top: var(--navHeight);
+    transform: translate(0, 0);
+    z-index: -2;
+    transition: all .5s ease-in-out;
+}
+#closeMenu ~ span ~ #openMenuBackground{ /* Close menu after close button is clicked. */
+    transform: translate(0, -100vh);
+    z-index: -2;
+    transition: all .5s ease-in-out;
+}
+#navMenu{ /* The actual nav menu. */
+    text-align: left;
+}
+.menuNav{ /* Nav menu list (ul). */
+    list-style-type: none;
+    padding: 0;
+}
+.menuNav li a{ /* Nav menu list link. */
+    margin: 0;
+    text-decoration: none;
+    color: inherit;
+    line-height: 1.5em;
+}
+.menuNav li a:hover{ /* Nav menu list link (hover). */
+    color: var(--ikeaYellow);
+}
+
+
+/* MAIN CONTENT: */
+section{ /* Makes sections full width and centers children elements. */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+}
+#section01{
+    transform: translateY(-60px);
+    z-index: -9;
+}
+section:first-child{ /* Compensates the first sections for the fixed nav bar. */
+    margin-top: var(--navHeight);
+}
+.banner:first-child{ /* Removes said compensation if class is "banner". */
+    margin-top: 0;
+}
+.banner{ /* Defines the style of a banner section. */
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.col50{ /* Column (50% width). */
+    /* background-color: yellow; */
+    display: block;
+    width: 50%;
+        max-width: 50%;
+    float: left;
+}
+.mainContent img, .mainContentCol img{
+    display: block;
+    width: calc(100% - 60px);
+    margin: 0 var(--hzMargin);
+}
+.vidBg{
+    overflow: hidden;
+    position: relative;
+}
+.vidBg video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: -1;
+    overflow: hidden;
+    display: block;
+}
+
+
+/* INFO BOX: */
+@media screen and (min-width: 900px){
+    .infoBoxContainer{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .infoBox:first-child{
+    margin-left: var(--hzMargin);
+    }
+    .infoBox:last-child{
+        margin-right: var(--hzMargin);
+    }
+}
+@media screen and (max-width: 899px){
+    .infoBoxContainer{
+        width: 100%;
+        text-align: center;
+        display: grid;
+        justify-items: center;
+    }
+    .infoBox:not(:last-child){
+        margin-bottom: 30px;
+    }
+    .infoBox{
+    margin-left: var(--hzMargin);
+    margin-right: var(--hzMargin);
+    }
+
+}
+.infoBox{
+    width: 250px;
+    max-width: 250px;
+    min-width: 250px;
+    padding-top: var(--hzMargin);
+    padding-bottom: var(--hzMargin);
+    display: inline-block;
+    background-color: var(--ikeaBlue);
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    transform: translate(0,0);
+    transition: all .5s ease-in-out;
+}
+.infoBox h1, .infoBox h2, .infoBox h3, .infoBox h4, .infoBox p, .infoBox a{
+    color: white;
+}
+.infoBox:hover{
+    box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+    transform: translate(0, -20px);
+    transition: all .5s ease-in-out;
+}
+.priceTag{
+    display: inline-block;
+    margin: 0 var(--hzMargin);
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3)
+}
+.priceTag h2, .priceTag h3{
+    margin: 0;
+    padding: 10px 10px 10px 10px;
+}
+.priceTag h2{
+    font-size: var(--h1Size);
+    font-weight: 700;
+    text-align: center;
+    background-color: #f1f1f1;
+}
+.priceTag h3{
+    font-size: 14px;
+    font-weight: 400;
+    /* text-transform: uppercase; */
+    letter-spacing: 0.05em;
+    color: white;
+    background-color: var(--ikeaBlue);
+}
+
+.selectBox{
+    display: flex;
+    flex-direction: column;
+    margin: 0 var(--hzMargin);
+}
+select ~ select{
+    margin-top: 10px;
+}
+select:hover{
+    cursor: pointer;
+}
+select{
+    display: flex;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    font-size: var(--pSize);
+    color: var(--fontColorDefault);
+    font-weight: 500;
+    padding: 20px;
+    background-color: #F7F7F7;
+    border: none;
+    background-image: url("../img/keyboard_arrow_down_black.svg");
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 95%;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2)
+}
+
+hr{
+    margin-right: var(--hzMargin);
+    margin-left: var(--hzMargin);
+}
+
+/* FOOTER: */
+footer{ /* Footer style. */
+    background-color: var(--footerBg);
+    width: 100%;
+    display: block;
+}
+#footerMain{ /* Main content of the footer. */
+    width: 100%;
+    padding-top: var(--contentMargin);
+    padding-bottom: var(--contentMargin);
+    color: rgba(255,255,255,0.5);
+}
+
+#footerMain .content p{
+    color: white;
+    font-weight: var(--footerMainFontWeight);
+    font-size: var(--footerMainFontSize);
+}
+
+#footerBottom{ /* Bottom content of the footer. */
+    width: 100%;
+    padding: 30px 0;
+    background-color: rgba(0,0,0,0.4);
+}
+.footerNav{ /* Navigation within the footer (ul). */
+    list-style-type: none;
+    padding: 0;
+}
+#footerMain .content a{ /* Navigation link within the footer. */
+    margin: 0;
+    text-decoration: none;
+    color: white;
+    line-height: 1.5em;
+    font-size: var(--footerMainFontSize);
+    font-weight: var(--footerMainFontWeight);
+    transition: var(--yellowLinkAnimDuration);
+    -webkit-transition: var(--yellowLinkAnimDuration);
+    -moz-transition: var(--yellowLinkAnimDuration);
+    -ms-transition: var(--yellowLinkAnimDuration);
+    -o-transition: var(--yellowLinkAnimDuration);
+}
+#footerMain .content a:hover{ /* Navigation link within the footer (hover). */
+    color: var(--ikeaYellow);
+    transition: var(--yellowLinkAnimDuration);
+    -webkit-transition: var(--yellowLinkAnimDuration);
+    -moz-transition: var(--yellowLinkAnimDuration);
+    -ms-transition: var(--yellowLinkAnimDuration);
+    -o-transition: var(--yellowLinkAnimDuration);
+}
+#footerMain .content ul li{
+    transform: translate(0,0);
+    -webkit-transform: translate(0,0);
+    -moz-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    -o-transform: translate(0,0);
+    transition: var(--hzLinkAnimDuration);
+    -webkit-transition: var(--hzLinkAnimDuration);
+    -moz-transition: var(--hzLinkAnimDuration);
+    -ms-transition: var(--hzLinkAnimDuration);
+    -o-transition: var(--hzLinkAnimDuration);
+}
+#footerMain .content ul li:hover{
+    transform: var(--hzLinkAnim);
+    -webkit-transform: var(--hzLinkAnim);
+    -moz-transform: var(--hzLinkAnim);
+    -ms-transform: var(--hzLinkAnim);
+    -o-transform: var(--hzLinkAnim);
+    transition: var(--hzLinkAnimDuration);
+    -webkit-transition: var(--hzLinkAnimDuration);
+    -moz-transition: var(--hzLinkAnimDuration);
+    -ms-transition: var(--hzLinkAnimDuration);
+    -o-transition: var(--hzLinkAnimDuration);
+}
+.footerCreds{ /* Credits. */
+    color: rgba(255,255,255,0.5);
+    font-size: 10px;
+    font-weight: 100;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+/*
+---------------------------------------
+THEME MAIN STYLE: End
+---------------------------------------
+*/
+
+
+/*
+############################################################
+*/
+
+
+/*
+---------------------------------------
+FLOATING BUTTONS: Start
+---------------------------------------
+*/
+
+@keyframes bounce{ /* Scroll-down-arrow animation. */
+
+    0%{
+        transform: translate(0, -10px);
+            -webkit-transform: translate(0, -10px);
+            -moz-transform: translate(0, -10px);
+            -ms-transform: translate(0, -10px);
+            -o-transform: translate(0, -10px);
+    }
+
+    25%{
+        transform: translate(0, -8px);
+            -webkit-transform: translate(0, -8px);
+            -moz-transform: translate(0, -8px);
+            -ms-transform: translate(0, -8px);
+            -o-transform: translate(0, -8px);
+
+    }
+
+    50%{
+        transform: translate(0, 0);
+            -webkit-transform: translate(0, 0);
+            -moz-transform: translate(0, 0);
+            -ms-transform: translate(0, 0);
+            -o-transform: translate(0, 0);
+    }
+
+    75%{
+        transform: translate(0, -8px);
+            -webkit-transform: translate(0, -8px);
+            -moz-transform: translate(0, -8px);
+            -ms-transform: translate(0, -8px);
+            -o-transform: translate(0, -8px);
+    }
+
+    100%{
+        transform: translate(0, -10px);
+            -webkit-transform: translate(0, -10px);
+            -moz-transform: translate(0, -10px);
+            -ms-transform: translate(0, -10px);
+            -o-transform: translate(0, -10px);
+    }
+}
+.scrollBounce{ /* Scroll-down-arrow style. */
+    /* background-color: white; */
+    background-image: var(--scrollBtn);
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: center;
+    position: absolute;
+    display: block;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-left: -30px;
+    left: 50%;
+    bottom: var(--hzMargin);
+    z-index: 8;
+    /* box-shadow: 0 0 30px rgba(0,0,0,0.15); */
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,.5));
+    animation: bounce 1s infinite ease-out;
+        -webkit-animation: bounce 1s infinite ease-out;
+        -moz-animation: bounce 1s infinite ease-out;
+        -ms-animation: bounce 1s infinite ease-out;
+        -o-animation: bounce 1s infinite ease-out;
+}
+.floatingBtn{ /* Scroll-up-button style. */
+    background-color: white;
+    background-image: var(--floatingBtnBg);
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: center;
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    z-index: 8;
+    border-radius: 50%;
+    bottom: var(--hzMargin);
+    right: var(--hzMargin);
+    box-shadow: 0 0 30px rgba(0,0,0,0.15);
+    transform: var(--btnAnimInit);
+        -webkit-transform: var(--btnAnimInit);
+        -moz-transform: var(--btnAnimInit);
+        -ms-transform: var(--btnAnimInit);
+        -o-transform: var(--btnAnimInit);
+    transition: var(--btnAnimDuration);
+        -webkit-transition: var(--btnAnimDuration);
+        -moz-transition: var(--btnAnimDuration);
+        -ms-transition: var(--btnAnimDuration);
+        -o-transition: var(--btnAnimDuration);
+}
+.floatingBtn:hover{ /* Scroll-up-button style (hover). */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.20);
+    transform: var(--btnAnimHover);
+        -webkit-transform: var(--btnAnimHover);
+        -moz-transform: var(--btnAnimHover);
+        -ms-transform: var(--btnAnimHover);
+        -o-transform: var(--btnAnimHover);
+    transition: var(--btnAnimDuration);
+        -webkit-transition: var(--btnAnimDuration);
+        -moz-transition: var(--btnAnimDuration);
+        -ms-transition: var(--btnAnimDuration);
+        -o-transition: var(--btnAnimDuration);
+}
+
+/*
+---------------------------------------
+FLOATING BUTTONS: Start
+---------------------------------------
+*/
+
+
+/*
+############################################################
+*/
+
+
+/*
+---------------------------------------
+GOOGLE FONTS: Start
+---------------------------------------
+*/
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1.3em !important;
+    display: inline-block;
+    line-height: inherit !important;
+    margin-top: -0.1em;
+    vertical-align: middle;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+  
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+  
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+  
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+  }
+
+  /* Rules for sizing the icon. */
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
+  /*
+---------------------------------------
+GOOGLE FONTS: End
+---------------------------------------
+*/
+
+
+/* TYPOGRAPHY: */
+.left{text-align: left;}
+.center{text-align: center;}
+.justify{text-align: justify;}
+.right{text-align: right;}
+.bold{font-weight: 700;}
+.regular{font-weight: 400;}
+.thin{font-weight: 300;}
+.white{color: white;}
+.blue{color: var(--ikeaBlue);}
+/* 
+These codes has to be at the end
+in order to have overwriting
+attributes.
+*/
+
+
+/* FOR DEBUGGING PURPOSES: */
+.hide{/* Apply to hide HTML-elements. */
+    display: hidden !important;
+}
+.debugRed{background-color: red !important;}
+.debugGreen{background-color: green !important;}
+.debugBlue{background-color: blue !important;}
+.debugYellow{background-color: yellow !important;}

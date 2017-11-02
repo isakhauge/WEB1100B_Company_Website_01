@@ -9,7 +9,7 @@ HEAD: START
 
 I head setter vi forskjellige
 instillinger for hele HTML-dokumenter,
-Som f.eks. CSS, tillel, og charset.
+Som f.eks. CSS, tittel, og charset.
 
 -->
 
@@ -18,13 +18,19 @@ Som f.eks. CSS, tillel, og charset.
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!-- CSS-REFERANSE: -->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- CSS REFERENCES: -->
+    <link rel="stylesheet" type="text/css" href="rsc/css/main_theme.css">
+    <link rel="stylesheet" type="text/css" href="rsc/css/produkt.css">
+    <link rel="stylesheet" type="text/css" href="rsc/css/product_gallery.css">
 
-    <!-- GOOGLE FONT REFERANSE -->
+    <!-- GOOGLE FONT REFERANSE: -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
 
-    <title>Website title</title>
+    <!-- GOOGLE MATERIAL ICONS REFERENCE: -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+
+    <title>Ikea - Produkt</title>
 </head>
 
 <!-- 
@@ -47,28 +53,72 @@ BODY: START
 
 Body er selve hovedplassen for HTML.
 Innenfor body-taggene lager vi innholdet
-for nettside vår.
+for nettsiden vår.
 
 -->
 
 <body>
 
 
+<a href="#top" id="floatingTop" class="floatingBtn"></a>
 
-
-
-
-
-
+<div id="top"></div>
 <header><!-- Header: Start -->
 <!-- 
 INFO: I header-tag (ikke head) så skal
 man f.eks. ha menybar/statusbar.
  -->
-
     <nav>
-        <div id="navBarElementLeft">LEFT</div>
-        <div id="navBarElementRight">RIGHT</div>
+        <div class="content">
+            <div id="navBarElementLeft">
+                <a id="logo" href="index.html"></a>
+            </div>
+
+            <div id="navBarElementRight">
+                <div id="navMenuContainer">
+                    
+                    <label id="closeMenuBtn" for="closeMenu"><!-- This is the radio button that closes the menu. -->
+                    <input type="radio" id="closeMenu" name="toggle" checked>
+                    <span><i class="material-icons">close</i></span>
+                    </label>
+                    
+                    <label id="openMenuBtn" for="openMenu"><!-- This is the radio button that opens the menu. -->
+                    <input type="radio" id="openMenu" name="toggle">
+                    <span><i class="material-icons">menu</i>&nbsp;&nbsp;Meny</span>
+                    
+                    <div id="openMenuBackground">
+                        <div id="navMenu" class="mainContentCol">
+
+                            <div class="col50 white">
+                                <h3>Hovedmeny</h3>
+                                <ul class="menuNav">
+                                    <li><a href="index.html">Hjem</a></li>
+                                    <li><a href="produkt.html">Produkt</a></li>
+                                    <li><a href="omoss.html">Om oss</a></li>
+                                    <li><a href="kontakt.html">Kontakt oss</a></li>
+                                </ul>
+                            </div>
+                            <div class="col50 white">
+                                <h3>Kundeservice</h3>
+                                <ul class="menuNav">
+                                    <li><a href="http://www.ikea.com/ms/no_NO/customer-service/about-our-products/planning-tools/index.html">Planleggingsverktøy</a></li>
+                                    <li><a href="http://www.ikea.com/ms/no_NO/service-offer/index.html">Service og tjenester</a></li>
+                                    <li><a href="http://www.ikea.com/ms/no_NO/customer_service/shop_offline/secure/betal_din_ordre.html">Betal din ordre</a></li>
+                                    <li><a href="http://www.ikea.com/ms/no_NO/customer_service/kjoekken/kjoekken_kontaktskjema.html">Kjøkkenbestilling</a></li>
+                                    <li><a href="http://www.ikea.com/ms/no_NO/customer_service/contact_us/index.html">Kontakt oss</a></li>
+                                    <li><a href="http://www.ikea.com/ms/no_NO/service-offer/gavekort/index.html">Gavekort</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </label>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+        </div>
     </nav>
 
 
@@ -88,14 +138,196 @@ innholde i nettsiden være.
  -->
 
 <!-- Landingsside -->
-    <section id="bannerMain">
+    
 
-        <div>
-            <h1>Velkommen</h1>
-            <h2>Silicon Valley Boys</h2>
+    <section class="sectBlue">
+
+        <div class="mainContent">
+
+            <div id="prodImgOppland">
+
+                <div class="prodImgPlaceholder"></div>
+
+                <label for="prodImg01">
+                    <input type="radio" name="prodImg" id="prodImg01" checked>
+                    <span class="prodImgBtn"></span>
+                    <div class="prodImg"></div>
+                </label>
+
+                <label for="prodImg02">
+                    <input type="radio" name="prodImg" id="prodImg02">
+                    <span class="prodImgBtn"></span>
+                    <div class="prodImg"></div>
+                </label>
+
+                <label for="prodImg03">
+                    <input type="radio" name="prodImg" id="prodImg03">
+                    <span class="prodImgBtn"></span>
+                    <div class="prodImg"></div>
+                </label>
+            </div>
+
         </div>
 
     </section>
+
+
+    <section>
+
+        <div class="mainContentCol">
+
+            <div class="col50">
+
+                <h1>Oppland</h1>
+                
+                <h3 class="regular">Seng, brunbeiset askefiner</h3>
+                
+                <div class="vSpace60"></div>
+                <div class="priceTag">
+                    <h2>2.995,-</h2>
+                    <h3>NOK 2.396,- &nbsp; Ekskludert mva.</h3>
+                </div>
+
+                <p><small style="color: #888">
+                    Pris oppdateres automatisk ved andre produktvalg.<br />
+                    Prisen er inkl. mva. Sengebunn, madrass og sengetøy<br />
+                    selges separat.
+                </small></p>
+                <h4>Artikkelnummer: 690.402.25</h4>
+                    
+            </div>
+
+            <div class="col50">
+
+                <div class="selectBox">
+                    <select name="storrelse">
+                        <option value="medium">160x200 cm</option>
+                        <option value="large">180x200 cm</option>
+                    </select>
+                    <select name="ribbebunn">
+                        <option value="leirsund">Leirsund</option>
+                        <option value="lonset">Lönset</option>
+                        <option value="luroy">Luröy</option>
+                    </select>
+                </div>
+
+                <div class="vSpace40"></div>
+
+                <a href="http://www.ikea.com/no/no/catalog/products/S69040225/#" class="mediaBtn largeBtn">
+                    <i class="material-icons">shopping_cart</i> Kjøp på nett
+                </a>
+                <br />
+                <a href="http://www.ikea.com/no/no/catalog/products/S69040225/#" class="normalBtn largeBtn">
+                    <i class="material-icons">favorite_border</i> Legg til ønskeliste
+                </a>
+
+                <div class="vSpace40"></div>
+                <hr>
+                <p><small style="color: #888">Sortiment og priser kan variere mellom varehusene. Prisene på IKEA.no er maksimumspriser. Eventuelle lokale tilbudspriser oppdateres ikke her.</small></p>
+
+            </div>
+
+            
+        </div>
+
+    </section>
+
+
+
+
+    <section class="sectGrey sectLine">
+        <div class="mainContent">
+
+            <h2 class="center">Prisoversikt</h2>
+            <h3 class="center thin">Ribbebunn og rammestørrelser</h3>
+
+            <div class="vSpace40"></div>
+
+            <table id="tabellProd">
+                <tr>
+                    <th>Ribbebunn:</th>
+                    <th>Pris for 160x200 cm</th>
+                    <th>Pris for 180x200 cm</th>
+                </tr>
+                <tr>
+                    <th>Luröy</th>
+                    <td>3.295,-</td>
+                    <td>3.695,-</td>
+                </tr>
+                <tr>
+                    <th>Leirsund</th>
+                    <td>3.985,-</td>
+                    <td>4.585,-</td>
+                </tr>
+                <tr>
+                    <th>Lönset</th>
+                    <td>3.585,-</td>
+                    <td>4.025,-</td>
+                </tr>
+
+            </table>
+            <div class="vSpace20"></div>
+
+        </div>
+    </section>
+
+
+    <section class="sectBlue">
+        
+        <div class="mainContentCol vCenter white">
+
+            <div class="col50">
+
+            <img src="rsc/img/oppland2.jpg" alt="Produkt1" class="imgContain">
+
+            </div>
+
+            <div class="col50">
+
+                <h2 class="white">Oppland</h2>
+                <ul class="listStyleSquare">
+                    <li>Om du leser, surfer eller ser TV i sengen, er den myke hodegavlen behagelig å lene seg mot</li>
+                    <li>Enkel å holde ren siden du kan ta av trekket og vaske det i maskin.</li>
+                    <li>Det naturlige årringmønsteret og den tydelige teksturen i treet fremheves ved først å børste askefineren og deretter mattlakke den.</li>
+                    <li>Trefineren vil gjøre at sengen bare blir vakrere med årene.</li>
+                    <li>Justerbare sengesider slik at du kan bruke madrasser av ulike tykkelser.</li>
+                    <li>17 ribber av sjiktlimt bjørk tilpasser seg kroppsvekten din og gir madrassen økt smidighet.</li>
+                </ul>
+
+            </div>
+            
+        </div>
+
+    </section>
+
+    <section>    
+
+        <div class="mainContentCol vCenter">
+
+            <div class="col50">
+
+                <h2> Greit å vite </h2>
+                <ul class="listStyleSquare">
+                    <li>SKORVA midtbalk er inkludert i prisen, men er pakket separat.</li>
+                    <li>Den er nødvendig for å gjøre sengen stabil og for å holde madrassene på plass.</li>
+                    <li>Sengebunn er inkludert i prisen, men må plukkes separat.</li>
+                    <li>Skap ekstra oppbevaringsplass under senga med RÖMSKOG sengeskuffer.</li>
+                </ul>
+
+            </div>
+
+            <div class="col50">
+
+                <img src="rsc/img/oppland3.jpg" alt="Produkt2" class="imgCover" height="350px">
+
+            </div>
+
+        </div>
+
+    </section>
+
+    
+
 
 </main><!-- Main: Slutt -->
 
@@ -106,22 +338,75 @@ innholde i nettsiden være.
 
 
 
-<footer><!-- Footer: Start -->
+<footer class="bgFooter"><!-- Footer: Start -->
 <!-- 
 I footer-tag skal footeren være.
  -->
 
-    <div id="footerTop"></div>
+    <div id="footerTop" class="hide"></div>
 
 
-    <div id="footerMain"></div>
+    <div id="footerMain">
+
+        <div class="content">
+
+            <div class="col50">
+                <div class="logo"></div>
+                <p>
+                    <span class="bold">Inter IKEA Holding S.A</span><br />
+                    Rue de Grass 100<br />
+                    6700 Arlon-Sterpenich<br />
+                    Belgia
+                </p>
+
+                <div class="vSpace20"></div>
+
+                <p><span class="bold">Kundeservice</span></p>
+                <ul class="footerNav">
+                    <li><a href="http://www.ikea.com/ms/no_NO/customer-service/about-our-products/planning-tools/index.html">Planleggingsverktøy</a></li>
+                    <li><a href="http://www.ikea.com/ms/no_NO/service-offer/index.html">Service og tjenester</a></li>
+                    <li><a href="http://www.ikea.com/ms/no_NO/customer_service/shop_offline/secure/betal_din_ordre.html">Betal din ordre</a></li>
+                    <li><a href="http://www.ikea.com/ms/no_NO/customer_service/kjoekken/kjoekken_kontaktskjema.html">Kjøkkenbestilling</a></li>
+                    <li><a href="http://www.ikea.com/ms/no_NO/customer_service/contact_us/index.html">Kontakt oss</a></li>
+                    <li><a href="http://www.ikea.com/ms/no_NO/service-offer/gavekort/index.html">Gavekort</a></li>
+                </ul>
+              
+            </div>
+
+            <div class="col50">
+                    <p class="justify">
+                        <span class="bold">Ansvarsfraskrivelse</span><br />
+                        Denne hjemmesiden er et fiktivt redesign av Ikeas hjemmeside, isolert rundt ett produkt. Den er laget i regi av faget WEB1100B, og er kun ment for faglig utvikling — ikke kommersielt bruk eller offentlig publisering på Internett. Alle bilder og videomateriale er hentet fra eksterne kilder, og vi påberoper oss ikke eierskap over disse. Vi har fått godkjennelse fra Ikeas PR-avdeling til å bruke deres egne bilder og videomateriale til dette skoleprosjektet.
+                    </p>
+                    <p>
+                        <span class="bold">Skoleoppgave</span><br />
+                        Skole: Høyskolen i Sørøst-Norge (HSN)<br />
+                        Emne: Web-utvikling og HCI (WEB1100B)<br />
+                        Prosjektstart: 20. September 2017
+                    </p>
+                    <p>
+                        <span class="bold">Gruppemedlemmer</span><br />
+                        Anders: anderskoo@live.no<br />
+                        Kim: kimviggo.pedersen@gmail.com<br />
+                        Lars Stian: larsstianf@outlook.com<br />
+                        Isak: isakhauge@gmail.com
+                    </p>
+                    <p>
+                        <span class="bold">Bildebruk og referanser</span><br />
+                        <a href="referanse.html">Referanseliste</a>
+                    </p>
+            </div>
+
+        </div>
+
+    </div>
 
 
     <div id="footerBottom">
-        <p class="footerCredits">
-            Silicon Valley Boys<br />
-            All rights reserved<br />
-            Copyright &copy;2017
+        <p class="footerCreds center">
+            Laget av Silicon Valley Boys<br />
+            KUN MED HTML OG CSS<br />
+            OPPHAVSRETT &copy;2017
         </p>
     </div>
 

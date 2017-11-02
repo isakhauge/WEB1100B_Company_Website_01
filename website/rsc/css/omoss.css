@@ -1,0 +1,46 @@
+
+
+/* VARIABLER: SLUTT */
+
+
+
+
+
+
+
+
+/* 
+HTML BODY OG BASIC FIKSER: START
+*/
+
+/* Denne koden fikser problem med margin og padding. */
+
+
+
+/* Denne koden fjerner uønskede mellomrom i body. */
+
+/* 
+HTML BODY OG BASIC FIKSER: SLUTT
+*/
+    
+#konBg img {
+    max-width: 100%;
+    position: relative;
+    max-height: 100%;
+}
+
+#konBg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+/* 
+FONTER OG TYPOGRAFI: START
+*/
+
+
+/* 
+FONTER OG TYPOGRAFI: SLUTT
+*/

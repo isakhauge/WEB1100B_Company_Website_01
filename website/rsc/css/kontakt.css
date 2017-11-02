@@ -1,0 +1,12 @@
+#serviceLinks{
+    list-style-type: none;
+    padding: 0;
+}
+
+#serviceLinks li a{
+	margin-left: 10px;
+}
+
+#kontaktBg{
+    background-image: url("../img/service.jpg");
+}
